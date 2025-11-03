@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Marktel - Plataforma de Comunicação Omnichannel</title>
+
+        <!-- Meta Tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta name="author" content="StackBros" />
+        <meta
+            name="description"
+            content="Plataforma completa de comunicação omnichannel - WhatsApp, SMS, Voz e muito mais"
+        />
+
+        <!-- Dark mode -->
+        <script>
+            const storedTheme = localStorage.getItem("theme");
+
+            const getPreferredTheme = () => {
+                if (storedTheme) {
+                    return storedTheme;
+                }
+                return window.matchMedia("(prefers-color-scheme: light)")
+                    .matches
+                    ? "light"
+                    : "light";
+            };
+
+            const setTheme = function (theme) {
+                if (
+                    theme === "auto" &&
+                    window.matchMedia("(prefers-color-scheme: dark)").matches
+                ) {
+                    document.documentElement.setAttribute(
+                        "data-bs-theme",
+                        "dark"
+                    );
+                } else {
+                    document.documentElement.setAttribute(
+                        "data-bs-theme",
+                        theme
+                    );
+                }
+            };
+
+            setTheme(getPreferredTheme());
+
+            window.addEventListener("DOMContentLoaded", () => {
+                var el = document.querySelector(".theme-icon-active");
+                if (el != "undefined" && el != null) {
+                    const showActiveTheme = (theme) => {
+                        const activeThemeIcon = document.querySelector(
+                            ".theme-icon-active use"
+                        );
+                        const btnToActive = document.querySelector(
+                            `[data-bs-theme-value="${theme}"]`
+                        );
+                        const svgOfActiveBtn = btnToActive
+                            .querySelector(".mode-switch use")
+                            .getAttribute("href");
+
+                        document
+                            .querySelectorAll("[data-bs-theme-value]")
+                            .forEach((element) => {
+                                element.classList.remove("active");
+                            });
+
+                        btnToActive.classList.add("active");
+                        activeThemeIcon.setAttribute("href", svgOfActiveBtn);
+                    };
+
+                    window
+                        .matchMedia("(prefers-color-scheme: dark)")
+                        .addEventListener("change", () => {
+                            if (
+                                storedTheme !== "light" ||
+                                storedTheme !== "dark"
+                            ) {
+                                setTheme(getPreferredTheme());
+                            }
+                        });
+
+                    showActiveTheme(getPreferredTheme());
+
+                    document
+                        .querySelectorAll("[data-bs-theme-value]")
+                        .forEach((toggle) => {
+                            toggle.addEventListener("click", () => {
+                                const theme = toggle.getAttribute(
+                                    "data-bs-theme-value"
+                                );
+                                localStorage.setItem("theme", theme);
+                                setTheme(theme);
+                                showActiveTheme(theme);
+                            });
+                        });
+                }
+            });
+        </script>
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="assets/images/logo-icon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/images/logo-icon.ico" />
+        <link rel="apple-touch-icon" href="assets/images/logo icone.png" />
+
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- Plugins CSS -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/vendor/swiper/swiper-bundle.min.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/vendor/glightbox/css/glightbox.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="assets/vendor/aos/aos.css"
+        />
+
+        <!-- Theme CSS -->
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    </head>
+
+    <body>
+        <!-- Header START -->
+        <div class="header-absolute">
+            <!-- Header START -->
+            <header class="header-sticky bg-transparent">
+                <!-- Logo Nav START -->
+                <nav class="navbar navbar-expand-xl">
+                    <div class="container">
+                        <!-- Logo START -->
+                        <a class="navbar-brand me-0" href="index.html">
+                            <img
+                                class="light-mode-item navbar-brand-item"
+                                src="assets/images/logo.svg"
+                                alt="logo"
+                            />
+                            <img
+                                class="dark-mode-item navbar-brand-item"
+                                src="assets/images/logo-light.svg"
+                                alt="logo"
+                            />
+                        </a>
+                        <!-- Logo END -->
+
+                        <!-- Main navbar START -->
+                        <div
+                            class="navbar-collapse collapse"
+                            id="navbarCollapse"
+                        >
+                            <ul
+                                class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto"
+                            >
+                                <!-- Nav item -->
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link  active"
+                                        href="index-ai-agency.html#"
+                                        data-bs-auto-close="outside"
+                                        data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        >A Marktel</a
+                                    >
+                                    <div
+                                        class="dropdown-menu dropdown-menu-size-lg overflow-hidden p-0"
+                                    >
+                                <li class="nav-item dropdown">
+                                    <a
+                                        class="nav-link dropdown-toggle"
+                                        href="index-ai-agency.html#"
+                                        data-bs-auto-close="outside"
+                                        data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false"
+                                        >Serviços</a
+                                    >
+                                    <div
+                                        class="dropdown-menu dropdown-menu-size-xl dropdown-menu-center p-xl-3"
+                                    >
+                                        <div
+                                            class="row row-cols-1 row-cols-md-2 pt-2"
+                                        >
+                                            <!-- Doc menu -->
+                                            <div class="col">
+                                                <div
+                                                    class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3"
+                                                >
+                                                    <div class="d-flex">
+                                                        <!-- Icon -->
+                                                        <div
+                                                            class="icon-md bg-primary bg-opacity-15 text-primary rounded flex-shrink-0"
+                                                        >
+                                                            <i
+                                                                class="bi bi-file-earmark-text fs-6"
+                                                            ></i>
+                                                        </div>
+                                                        <!-- Content -->
+                                                        <div class="mx-3">
+                                                            <p
+                                                                class="stretched-link heading-color fw-bold mb-0"
+                                                            >
+                                                                MarkChat
+                                                            </p>
+                                                            <p
+                                                                class="mb-0 text-body small"
+                                                            >
+                                                                Atendimento
+                                                                Omnichannel
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Button -->
+                                                    <a
+                                                        class="icon-link icon-link-hover text-primary-hover stretched-link"
+                                                        href="index-ai-agency.html#"
+                                                        target="_blank"
+                                                        ><i
+                                                            class="bi bi-chevron-right"
+                                                        ></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Doc menu -->
+                                            <div class="col">
+                                                <div
+                                                    class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3"
+                                                >
+                                                    <div class="d-flex">
+                                                        <!-- Icon -->
+                                                        <div
+                                                            class="icon-md bg-pink bg-opacity-15 text-pink rounded flex-shrink-0"
+                                                        >
+                                                            <i
+                                                                class="bi bi-stickies fs-6"
+                                                            ></i>
+                                                        </div>
+                                                        <!-- Content -->
+                                                        <div class="mx-3">
+                                                            <p
+                                                                class="stretched-link heading-color fw-bold mb-0"
+                                                            >
+                                                                MarkZap
+                                                            </p>
+                                                            <p
+                                                                class="mb-0 text-body small"
+                                                            >
+                                                                Envios de
+                                                                mensagens
+                                                                WhatsApp
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Button -->
+                                                    <a
+                                                        class="icon-link icon-link-hover text-primary-hover stretched-link"
+                                                        href="index-ai-agency.html#"
+                                                        target="_blank"
+                                                        ><i
+                                                            class="bi bi-chevron-right"
+                                                        ></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Doc menu -->
+                                            <div class="col">
+                                                <div
+                                                    class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3"
+                                                >
+                                                    <div class="d-flex">
+                                                        <!-- Icon -->
+                                                        <div
+                                                            class="icon-md bg-success bg-opacity-15 text-success rounded flex-shrink-0"
+                                                        >
+                                                            <i
+                                                                class="bi bi-bullseye fs-6"
+                                                            ></i>
+                                                        </div>
+                                                        <!-- Content -->
+                                                        <div class="mx-3">
+                                                            <p
+                                                                class="stretched-link heading-color fw-bold mb-0"
+                                                            >
+                                                                MarkSMS
+                                                            </p>
+                                                            <p
+                                                                class="mb-0 text-body small"
+                                                            >
+                                                                Envio de
+                                                                mensagens de SMS
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Button -->
+                                                    <a
+                                                        class="icon-link icon-link-hover text-primary-hover stretched-link"
+                                                        href="index-ai-agency.html#"
+                                                        target="_blank"
+                                                        ><i
+                                                            class="bi bi-chevron-right"
+                                                        ></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Doc menu -->
+                                            <div class="col">
+                                                <div
+                                                    class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3"
+                                                >
+                                                    <div class="d-flex">
+                                                        <!-- Icon -->
+                                                        <div
+                                                            class="icon-md bg-warning bg-opacity-15 text-warning rounded flex-shrink-0"
+                                                        >
+                                                            <i
+                                                                class="bi bi-mask fs-6"
+                                                            ></i>
+                                                        </div>
+                                                        <!-- Content -->
+                                                        <div class="mx-3">
+                                                            <p
+                                                                class="stretched-link heading-color fw-bold mb-0"
+                                                            >
+                                                                MarkVoice
+                                                            </p>
+                                                            <p
+                                                                class="mb-0 text-body small"
+                                                            >
+                                                                Envio de
+                                                                mensagens de Voz
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Button -->
+                                                    <a
+                                                        class="icon-link icon-link-hover text-primary-hover stretched-link"
+                                                        href="index-ai-agency.html#"
+                                                        target="_blank"
+                                                        ><i
+                                                            class="bi bi-chevron-right"
+                                                        ></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Doc menu -->
+                                            <div class="col">
+                                                <div
+                                                    class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3"
+                                                >
+                                                    <div class="d-flex">
+                                                        <!-- Icon -->
+                                                        <div
+                                                            class="icon-md bg-info bg-opacity-15 text-info rounded flex-shrink-0"
+                                                        >
+                                                            <i
+                                                                class="bi bi-grid-fill fs-6"
+                                                            ></i>
+                                                        </div>
+                                                        <!-- Content -->
+                                                        <div class="mx-3">
+                                                            <p
+                                                                class="stretched-link heading-color fw-bold mb-0"
+                                                            >
+                                                                MarkRCS
+                                                            </p>
+                                                            <p
+                                                                class="mb-0 text-body small"
+                                                            >
+                                                                Envios de SMS
+                                                                Multimidia
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Button -->
+                                                    <a
+                                                        class="icon-link icon-link-hover text-primary-hover stretched-link"
+                                                        href="integrations.html"
+                                                        target="_blank"
+                                                        ><i
+                                                            class="bi bi-chevron-right"
+                                                        ></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <!-- Doc menu -->
+                                            <div class="col">
+                                                <div
+                                                    class="dropdown-item bg-secondary-hover d-flex align-items-center justify-content-between position-relative text-wrap py-3"
+                                                >
+                                                    <div class="d-flex">
+                                                        <!-- Icon -->
+                                                        <div
+                                                            class="icon-md bg-purple bg-opacity-15 text-purple rounded flex-shrink-0"
+                                                        >
+                                                            <i
+                                                                class="bi bi-chat-dots fs-6"
+                                                            ></i>
+                                                        </div>
+                                                        <!-- Content -->
+                                                        <div class="mx-3">
+                                                            <p
+                                                                class="stretched-link heading-color fw-bold mb-0"
+                                                            >
+                                                                MarkPBX
+                                                            </p>
+                                                            <p
+                                                                class="mb-0 text-body small"
+                                                            >
+                                                                Central
+                                                                telefônica
+                                                                online
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Button -->
+                                                    <a
+                                                        class="icon-link icon-link-hover text-primary-hover stretched-link"
+                                                        href="index-ai-agency.html#"
+                                                        target="_blank"
+                                                        ><i
+                                                            class="bi bi-chevron-right"
+                                                        ></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <!-- Nav item -->
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link"
+                                        href="contact-us-v1.html"
+                                        >Contato</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Main navbar END -->
+
+                        <!-- Buttons -->
+                        <ul
+                            class="nav align-items-center dropdown-hover ms-sm-2"
+                        >
+                            <!-- Dark mode option START -->
+                            <li class="nav-item dropdown dropdown-animation">
+                                <button
+                                    class="btn btn-link mb-0 px-2 lh-1"
+                                    id="bd-theme"
+                                    type="button"
+                                    aria-expanded="false"
+                                    data-bs-toggle="dropdown"
+                                    data-bs-display="static"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        class="bi bi-circle-half theme-icon-active fill-mode fa-fw"
+                                        viewBox="0 0 16 16"
+                                    >
+                                        <path
+                                            d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                        />
+                                        <use href="#"></use>
+                                    </svg>
+                                </button>
+
+                                <ul
+                                    class="dropdown-menu min-w-auto dropdown-menu-end"
+                                    aria-labelledby="bd-theme"
+                                >
+                                    <li class="mb-1">
+                                        <button
+                                            type="button"
+                                            class="dropdown-item d-flex align-items-center"
+                                            data-bs-theme-value="light"
+                                        >
+                                            <svg
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-brightness-high-fill fa-fw mode-switch me-1"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+                                                />
+                                                <use href="#"></use></svg
+                                            >Light
+                                        </button>
+                                    </li>
+                                    <li class="mb-1">
+                                        <button
+                                            type="button"
+                                            class="dropdown-item d-flex align-items-center"
+                                            data-bs-theme-value="dark"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-moon-stars-fill fa-fw mode-switch me-1"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+                                                />
+                                                <path
+                                                    d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+                                                />
+                                                <use href="#"></use></svg
+                                            >Dark
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            type="button"
+                                            class="dropdown-item d-flex align-items-center active"
+                                            data-bs-theme-value="auto"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                width="16"
+                                                height="16"
+                                                fill="currentColor"
+                                                class="bi bi-circle-half fa-fw mode-switch me-1"
+                                                viewBox="0 0 16 16"
+                                            >
+                                                <path
+                                                    d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+                                                />
+                                                <use href="#"></use></svg
+                                            >Auto
+                                        </button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <!-- Dark mode option END -->
+
+                            <!-- Schedule button -->
+                            <li class="nav-item ms-2 d-none d-sm-block">
+                                <a
+                                    href="index-ai-agency.html#"
+                                    class="btn btn-sm btn-dark mb-0"
+                                    data-bs-toggle="offcanvas"
+                                    data-bs-target="#scheduleCall"
+                                    aria-controls="scheduleCall"
+                                    ><i class="bi bi-whatsapp me-2"></i>Agendar
+                                    demonstração</a
+                                >
+                            </li>
+                            <!-- Responsive navbar toggler -->
+                            <li class="nav-item">
+                                <button
+                                    class="navbar-toggler ms-sm-3 p-2"
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#navbarCollapse"
+                                    aria-controls="navbarCollapse"
+                                    aria-expanded="false"
+                                    aria-label="Toggle navigation"
+                                >
+                                    <span class="navbar-toggler-animation">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- Logo Nav END -->
+            </header>
+            <!-- Header END -->
+        </div>
+        <!-- Header END -->
+
+        <!-- **************** MAIN CONTENT START **************** -->
+        <main>
+            <!-- =======================
+Hero START -->
+            <section
+                class="bg-secondary-grad position-relative overflow-hidden pt-sm-8 pt-lg-9 pb-5"
+            >
+                <!-- Curve bg -->
+                <span class="position-absolute bottom-0 start-0">
+                    <svg
+                        class="fill-body"
+                        width="1920"
+                        height="254"
+                        viewBox="0 0 1920 254"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            d="M556.048 176.63C371.384 97.9289 108.406 143.838 0 176.63V254H1920V0C1863.62 35.5602 1712.53 98.8233 1559.27 67.394C1406.01 35.9648 1206.33 86.6647 1125.65 115.943C1012.72 168.964 740.712 255.331 556.048 176.63Z"
+                        />
+                    </svg>
+                </span>
+
+                <div class="container position-relative pt-4 pt-md-0">
+                    <div class="row">
+                        <!-- Content -->
+                        <div class="col-md-7 col-lg-6 mb-5 mb-md-0">
+                            <h1 class="display-5 mb-3 mb-md-4">
+                                Plataforma Marktel
+                                <span class="text-primary"
+                                    >Completa e versátil!</span
+                                >
+                            </h1>
+                            <p class="lead mb-3 mb-md-4">
+                                Todos os canais de relacionamento que sua
+                                empresa precisa integrados em um só lugar.
+                                Atendimento omnichannel, envio de WhatsApp, SMS,
+                                mensagens de voz e muito mais!
+                            </p>
+                            <a
+                                class="btn btn-primary-grad icon-link icon-link-hover"
+                                href="index-ai-agency.html#"
+                                >Saiba Mais<i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+
+                        <!-- Image -->
+                        <div class="col-md-5 ms-auto">
+                            <img
+                                src="assets/images/elements/ai-robot.svg"
+                                class="aos"
+                                data-aos="fade-up"
+                                data-aos-delay="200"
+                                data-aos-duration="500"
+                                data-aos-easing="ease-in-out"
+                                alt="AI-robot"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- =======================
+Hero END -->
+
+            <!-- =======================
+Features START -->
+            <section class="pt-4 pt-sm-6">
+                <div class="container">
+                    <div class="row g-4 g-lg-5">
+                        <!-- Feature item -->
+                        <div class="col-md-4 mb-4 mb-sm-0">
+                            <div
+                                class="card card-body bg-transparent text-center p-0"
+                            >
+                                <!-- Icon -->
+                                <div
+                                    class="icon-xl bg-warning bg-opacity-25 rounded-2 m-auto d-flex justify-content-center align-items-center mb-4"
+                                >
+                                    <svg
+                                        class="text-warning"
+                                        width="50"
+                                        height="50"
+                                        viewBox="0 0 50 50"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M41.5812 5.73541C42.4755 5.6878 43.2267 6.4001 43.2268 7.29567C43.2269 13.8143 42.6409 18.8998 41.541 22.788C40.441 26.6766 38.7961 29.4729 36.6033 31.2632C32.5146 34.6013 27.199 33.9631 21.9796 32.0571C23.4158 28.3359 25.8081 25.0887 29.3104 23.7778C30.1186 23.4753 30.5285 22.575 30.226 21.7668C29.9235 20.9586 29.0232 20.5486 28.215 20.8511C23.8177 22.4969 21.0169 26.2907 19.3648 30.1898C17.4616 27.1276 16.4531 24.1562 16.4066 21.3509C16.3559 18.2854 17.4583 15.553 19.5442 13.2865C23.6288 8.8482 31.3809 6.27845 41.5812 5.73541ZM19.3648 30.1898C19.168 30.6543 18.9875 31.1203 18.8225 31.5843C18.3369 32.9501 17.9746 34.3281 17.7223 35.6495C17.5234 35.2543 17.3162 34.8545 17.1014 34.4543C16.0691 32.531 14.8248 30.5291 13.4449 28.9866C12.1246 27.5107 10.3818 26.1181 8.33203 26.1181C7.46909 26.1181 6.76953 26.8177 6.76953 27.6806C6.76953 28.5436 7.46909 29.2431 8.33203 29.2431C8.97047 29.2431 9.91593 29.7288 11.1159 31.0701C12.2562 32.3448 13.3641 34.0992 14.348 35.9322C15.3244 37.7513 16.1429 39.5801 16.719 40.9601C17.0063 41.6484 17.2317 42.221 17.3845 42.6196C17.4609 42.8189 17.5191 42.9744 17.5578 43.079C17.5771 43.1313 17.5916 43.1709 17.601 43.1967L17.6113 43.2251L17.6135 43.2314L17.6138 43.2323L17.6139 43.2325L17.6139 43.2326C17.8947 44.0168 18.7414 44.4429 19.5386 44.2011C20.3358 43.9592 20.8031 43.1344 20.6007 42.3262C20.3928 41.4965 20.3128 40.0863 20.4886 38.3158C20.6617 36.5727 21.0725 34.5843 21.7669 32.6311C21.8354 32.4387 21.9062 32.2473 21.9796 32.0571C21.5007 31.8822 21.0225 31.6966 20.5462 31.5024C20.2561 31.3842 20.0082 31.1814 19.8348 30.9205C19.6725 30.6764 19.5158 30.4328 19.3648 30.1898Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </div>
+                                <!-- Title and content -->
+                                <h6 class="mb-3">Atendimento ao Cliente 24/7</h6>
+                                <p class="mb-0">
+                                    disponível 24h/7 dias, permitindo que os clientes obtenham respostas às suas perguntas 
+                                    a qualquer momento. Melhora a experiência e a satisfação do cliente.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature item -->
+                        <div class="col-md-4 mb-4 mb-sm-0">
+                            <div
+                                class="card card-body bg-transparent text-center p-0"
+                            >
+                                <!-- Icon -->
+                                <div
+                                    class="icon-xl bg-primary bg-opacity-25 rounded-2 m-auto d-flex justify-content-center align-items-center mb-4"
+                                >
+                                    <svg
+                                        class="text-primary"
+                                        width="50"
+                                        height="50"
+                                        viewBox="0 0 50 50"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M10.4979 31.473C10.1631 31.7097 9.86596 31.9497 9.63182 32.1838C7.74117 34.0744 7.08688 36.5528 6.87055 38.4055C6.76034 39.3494 6.75755 40.1826 6.78209 40.7813C6.7944 41.0822 7.01417 42.7876 7.03109 42.9622C7.20559 42.979 8.91109 43.1988 9.2118 43.2111C9.81073 43.2357 10.6437 43.233 11.5877 43.1226C13.4403 42.9063 15.9188 42.2519 17.8094 40.3613C18.0436 40.1272 18.2835 39.8301 18.5203 39.4953C18.6762 39.2749 18.7542 39.1647 18.9789 38.6159C19.4868 37.3761 19.2859 35.0169 18.5758 33.8809C18.2614 33.3782 17.987 33.1036 17.4383 32.5549C16.8895 32.0061 16.6151 31.7317 16.1123 31.4174C14.9762 30.7074 12.6172 30.5065 11.3774 31.0142C10.8286 31.239 10.7184 31.3169 10.4979 31.473Z"
+                                            fill="currentColor"
+                                        />
+                                        <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M35.1041 7.29265C36.9837 6.94724 38.6268 6.82155 39.8045 6.78213C40.5789 6.75622 40.9662 6.74326 41.3677 6.86095C42.1349 7.08586 42.9093 7.86015 43.1341 8.62745C43.2518 9.02893 43.2389 9.41618 43.2129 10.1907C43.1735 11.3683 43.0479 13.0114 42.7024 14.8909C42.0406 18.492 40.5504 23.077 37.1997 26.8837L36.7606 35.3195C36.566 39.0589 33.477 41.9912 29.7324 41.9912C25.9624 41.9912 22.8622 39.0203 22.7014 35.2537L22.6185 33.3108L16.6843 27.3766L14.7413 27.2937C10.9748 27.133 8.00391 24.0326 8.00391 20.2626C8.00391 16.518 10.9361 13.4292 14.6757 13.2345L23.1114 12.7955C26.9181 9.44472 31.5031 7.95447 35.1041 7.29265ZM31.2491 22.9166C31.2491 25.2178 29.3837 27.0833 27.0824 27.0833C24.7812 27.0833 22.9158 25.2178 22.9158 22.9166C22.9158 20.6154 24.7812 18.7499 27.0824 18.7499C29.3837 18.7499 31.2491 20.6154 31.2491 22.9166Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </div>
+                                <!-- Title and content -->
+                                <h6 class="mb-3">Eficiência Operacional</h6>
+                                <p class="mb-0">
+                                    capacidade de grande volume de consultas simultâneas, 
+                                    liberando a equipe de atendimento questões mais complexas. 
+                                    Maior eficiência operacional.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Feature item -->
+                        <div class="col-md-4 mb-4 mb-sm-0">
+                            <div
+                                class="card card-body bg-transparent text-center p-0"
+                            >
+                                <!-- Icon -->
+                                <div
+                                    class="icon-xl bg-pink bg-opacity-25 rounded-2 m-auto d-flex justify-content-center align-items-center mb-4"
+                                >
+                                    <svg
+                                        class="text-pink"
+                                        width="50"
+                                        height="50"
+                                        viewBox="0 0 50 50"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M37.1449 4.97022C36.5386 4.66956 35.9396 4.73612 35.5349 4.84152C35.1317 4.94645 34.7405 5.13597 34.3922 5.32947C33.7113 5.70762 32.8413 6.3055 31.809 7.01491L9.1608 22.5792C8.49876 23.034 7.89301 23.4503 7.46149 23.8259C7.0684 24.1682 6.38992 24.8263 6.37528 25.8257C6.3692 26.2417 6.46286 26.6532 6.64847 27.0255C7.0943 27.9201 7.99082 28.2195 8.49332 28.3578C9.04499 28.5097 9.77115 28.6226 10.5648 28.7461L18.0475 29.9103L13.063 38.7134C12.4699 39.7607 11.9669 40.649 11.6597 41.3403C11.5021 41.6953 11.351 42.0944 11.2841 42.5011C11.2163 42.9132 11.2083 43.5007 11.5471 44.0667C11.7835 44.4617 12.1204 44.7869 12.5235 45.0094C13.1011 45.3282 13.6879 45.2997 14.0973 45.2174C14.5013 45.1361 14.8951 44.9713 15.2442 44.8013C15.9244 44.4701 16.7944 43.9361 17.8203 43.3067L40.7311 29.2505C41.3947 28.8434 42.0057 28.4686 42.4465 28.1226C42.8538 27.8028 43.5459 27.1922 43.6203 26.213C43.6515 25.8022 43.5849 25.3899 43.4257 25.0099C43.0465 24.1042 42.1972 23.7428 41.7097 23.5678C41.1824 23.3782 40.4842 23.2153 39.7263 23.0382L31.6572 21.1522L36.7682 11.4183C37.3505 10.3093 37.8413 9.37477 38.1363 8.65395C38.2872 8.28508 38.429 7.87418 38.4855 7.46158C38.5424 7.04718 38.5376 6.44439 38.1674 5.87808C37.9134 5.48979 37.5605 5.17637 37.1449 4.97022Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </div>
+                                <!-- Title and content -->
+                                <h6 class="mb-3">
+                                    Análise de Dados 
+                                </h6>
+                                <p class="mb-0">
+                                    Tenha insights valiosos sobre seu comportamento, preferências e tendências de compra. 
+                                    Isso pode melhorar estratégias de marketing e vendas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row END -->
+                </div>
+            </section>
+            <!-- =======================
+Features END -->
+
+            <!-- =======================
+About START -->
+            <section class="position-relative pt-0 pb-0 pb-xl-8">
+                <div class="container px-xl-7">
+                    <div class="row align-items-center">
+                        <!-- Image -->
+                        <div
+                            class="col-lg-6 position-relative pe-xl-6 mb-5 mb-lg-0"
+                        >
+                            <div class="position-absolute top-0 start-0 ms-n6">
+                                <img
+                                    src="assets/images/elements/grad-shape/blur-decoration.svg"
+                                    class="blur-7 opacity-1"
+                                    alt="Grad shape"
+                                />
+                            </div>
+                            <img
+                                src="assets/images/fotohomem.jpg"
+                                class="rounded-4 z-index-2 position-relative"
+                                alt="about image"
+                            />
+                        </div>
+
+                        <!-- Content -->
+                        <div class="col-lg-6 ms-auto">
+                            <!-- Skill set -->
+                            <div
+                                class="d-flex align-items-center"
+                                style="max-width: 30rem"
+                            >
+                                <h2 class="display-4 text-primary-grad mb-0">
+                                    1Bi+
+                                </h2>
+                                <h6 class="mb-0 ms-3">
+                                    MAIS DE BILHÃO DE DISPAROS REALIZADOS
+                                </h6>
+                            </div>
+
+                            <hr
+                                class="border-primary border-opacity-50 mt-4 mb-5"
+                            />
+                            <!-- Divider -->
+
+                            <!-- Tabs and content START -->
+                            <!-- Tabs -->
+                            <div
+                                class="nav nav-pills nav-pills-dark gap-3"
+                                id="nav-tab"
+                                role="tablist"
+                            >
+                                <button
+                                    class="nav-link active"
+                                    id="nav-mission-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#nav-mission"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="nav-mission"
+                                    aria-selected="true"
+                                >
+                                    <i class="bi bi-bullseye me-2"></i>Marcos 
+                                </button>
+                                <button
+                                    class="nav-link"
+                                    id="nav-vision-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#nav-vision"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="nav-vision"
+                                    aria-selected="false"
+                                >
+                                    <i class="bi bi-eye me-2"></i>Diferenciais
+                                </button>
+                                <button
+                                    class="nav-link"
+                                    id="nav-goal-tab"
+                                    data-bs-toggle="tab"
+                                    data-bs-target="#nav-goal"
+                                    type="button"
+                                    role="tab"
+                                    aria-controls="nav-goal"
+                                    aria-selected="false"
+                                >
+                                    <i class="bi bi-trophy me-2"></i>Conecte
+                                </button>
+                            </div>
+
+                            <!-- Tab content -->
+                            <div class="tab-content mt-4" id="nav-tabContent">
+                                <!-- Mission content -->
+                                <div
+                                    class="tab-pane fade show active"
+                                    id="nav-mission"
+                                    role="tabpanel"
+                                    aria-labelledby="nav-mission-tab"
+                                    tabindex="0"
+                                >
+                                    <p class="mb-2">
+                                        Nossos resultados falam por si!
+                                    </p>
+                                    <!-- List -->
+                                    <ul
+                                        class="list-group list-group-borderless mb-3"
+                                    >
+                                        <li
+                                            class="list-group-item heading-color d-flex pb-0"
+                                        >
+                                            <i
+                                                class="bi bi-patch-check text-success me-2"
+                                            ></i
+                                            >3.000+ CLIENTES ATENDIDOS
+                                        </li>
+                                        <li
+                                            class="list-group-item heading-color d-flex pb-0"
+                                        >
+                                            <i
+                                                class="bi bi-patch-check text-success me-2"
+                                            ></i
+                                            >250+ PARCERIAS DE NEGÓCIOS REALIZADAS
+                                        </li>
+                                        <li
+                                            class="list-group-item heading-color d-flex pb-0"
+                                        >
+                                            <i
+                                                class="bi bi-patch-check text-success me-2"
+                                            ></i
+                                            >20+ ANOS DE MERCADO
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Vision content -->
+                                <div
+                                    class="tab-pane fade"
+                                    id="nav-vision"
+                                    role="tabpanel"
+                                    aria-labelledby="nav-vision-tab"
+                                    tabindex="0"
+                                >
+                                    <p class="mb-2">
+                                        A Marktel Mensagens Inteligentes é especialista em comunicação automatizada, 
+                                        conectando empresas aos seus clientes com agilidade, confiabilidade e resultados reais.
+                                    </p>
+                                    <!-- List -->
+                                    <ul
+                                        class="list-group list-group-borderless mb-3"
+                                    >
+                                        <li
+                                            class="list-group-item heading-color d-flex pb-0"
+                                        >
+                                            <i
+                                                class="bi bi-patch-check text-success me-2"
+                                            ></i
+                                            >Entrega Garantida: Alta taxa de entrega com infraestrutura estável e segura.
+                                        </li>
+                                        <li
+                                            class="list-group-item heading-color d-flex pb-0"
+                                        >
+                                            <i
+                                                class="bi bi-patch-check text-success me-2"
+                                            ></i
+                                            >Integração Simplificada: Conecte nossos serviços facilmente ao seu sistema.
+                                        </li>
+                                        <li
+                                            class="list-group-item heading-color d-flex pb-0"
+                                        >
+                                            <i
+                                                class="bi bi-patch-check text-success me-2"
+                                            ></i
+                                            >Resultados: Acompanhe relatórios e métricas de desempenho.
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Goal content -->
+                                <div
+                                    class="tab-pane fade"
+                                    id="nav-goal"
+                                    role="tabpanel"
+                                    aria-labelledby="nav-goal-tab"
+                                    tabindex="0"
+                                >
+                                    <p class="mb-2">
+                                        Nossa infraestrutura robusta e equipe especializada garantem entregas rápidas, confiáveis e suporte dedicado, ajudando sua empresa a se comunicar de forma eficiente e segura com seus clientes.
+                                    </p>
+                                    <!-- List -->
+                                    <ul
+                                        class="list-group list-group-borderless mb-3"
+                                    >
+                                        <li
+                                            class="list-group-item heading-color d-flex pb-0"
+                                        >
+                                            <i
+                                                class="bi bi-patch-check text-success me-2"
+                                            ></i
+                                            >Plataforma Omnichannel Completa: Conecte até 17 canais de comunicação em um só lugar e ofereça uma experiência unificada e eficiente para seus clientes.
+                                        </li>
+                                        <li
+                                            class="list-group-item heading-color d-flex pb-0"
+                                        >
+                                            <i
+                                                class="bi bi-patch-check text-success me-2"
+                                            ></i
+                                            >Infraestrutura de Alto Desempenho: Operamos com tecnologia de ponta em parceria com Meta, AWS e Google, garantindo segurança, estabilidade e alta taxa de entrega em todas as mensagens.
+                                        </li>
+                                        <l
+                                            class="list-group-item heading-color d-flex pb-0"
+                                        >
+                                            <i
+                                                class="bi bi-patch-check text-success me-2"
+                                            ></i
+                                            >Suporte Especializado:Equipe técnica e de marketing sempre pronta para otimizar seus resultados.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- Tabs and content END -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI hand -->
+                <div
+                    class="position-absolute top-100 start-0 translate-middle ms-9 mt-4 z-index-9"
+                >
+                    <img
+                        src="assets/images/elements/ai-hand.png"
+                        class="aos ms-9 ps-6"
+                        data-aos="fade-right"
+                        data-aos-delay="100"
+                        data-aos-duration="800"
+                        data-aos-easing="ease-in-out"
+                        alt="ai hand"
+                    />
+                </div>
+            </section>
+            <!-- =======================
+About END -->
+
+            <!-- =======================
+Services START -->
+            <section class="py-0 position-relative">
+                <!-- Robot decoration -->
+                <div
+                    class="position-absolute end-0 bottom-0 me-lg-7 mb-n7 z-index-2"
+                >
+                    <img
+                        src="assets/images/elements/ai-robot-2.svg"
+                        class="aos h-300px"
+                        data-aos="fade-left"
+                        data-aos-delay="100"
+                        data-aos-duration="800"
+                        data-aos-easing="ease-in-out"
+                        alt="robot image"
+                    />
+                </div>
+
+                <div class="bg-dark position-relative overflow-hidden py-8">
+                    <!-- AI pattern -->
+                    <div class="position-absolute top-0 start-0 mt-n9">
+                        <img
+                            src="assets/images/elements/ai-pattern.png"
+                            class="mt-n7"
+                            alt=""
+                        />
+                    </div>
+                    <!-- Curve bg -->
+                    <div class="position-absolute top-0 start-0 mt-n3">
+                        <svg
+                            class="fill-body"
+                            width="1920"
+                            height="146"
+                            viewBox="0 0 1920 146"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M1457.5 123.815C1692.5 141 1811.59 85.4373 1920 50.5V3L0 0.5V23.4269V141C56.3835 103.114 283.285 126.587 439.5 141C607.5 156.5 776.5 126.673 873.5 108.5C1087 68.5 1255.23 109.024 1457.5 123.815Z"
+                            />
+                        </svg>
+                    </div>
+                    <!-- Blur decoration -->
+                    <div class="position-absolute bottom-0 end-0 mb-n8 me-n9">
+                        <img
+                            src="assets/images/elements/grad-shape/blur-decoration-2.svg"
+                            class="opacity-2 blur-9"
+                            alt="Grad shape"
+                        />
+                    </div>
+
+                    <div
+                        class="container position-relative pt-5 pt-sm-8"
+                        data-bs-theme="dark"
+                    >
+                        <div class="row">
+                            <!-- Title and content -->
+                            <div class="col-lg-4 mb-5 mb-lg-0">
+                                <h2 class="mb-3 mb-lg-4">
+                                    Soluções Inteligentes de Comunicação em Massa
+                                </h2>
+                                <p class="mb-3 mb-lg-4">
+                                    Conecte-se com seu público de forma rápida, segura e eficiente. Nossa plataforma permite enviar mensagens em grande escala, 
+                                    mantendo alta entrega e confiabilidade em todos os canais.
+                                </p>
+                                <a
+                                    href="services-list.html"
+                                    class="btn btn-primary"
+                                    >Saiba mais</a
+                                >
+                            </div>
+
+                            <!-- Services START -->
+                            <div class="col-lg-7 ms-auto hover-opacity-fade">
+                                <!-- Service item -->
+                                <div
+                                    class="hover-item d-flex align-items-center border-bottom position-relative py-4"
+                                >
+                                    <!-- Icon -->
+                                    <img
+                                        src="assets/images/services/geo-shape/01.svg"
+                                        class="me-3"
+                                        alt="service icon"
+                                    />
+                                    <h6 class="mb-0">
+                                        MarkChat - Atendimento Omnichannel
+                                    </h6>
+                                    <a
+                                        href="service-single.html"
+                                        class="icon-link icon-link-hover text-body stretched-link ms-auto"
+                                        ><i class="bi bi-arrow-right fs-5"></i>
+                                    </a>
+                                </div>
+
+                                <!-- Service item -->
+                                <div
+                                    class="hover-item d-flex align-items-center border-bottom position-relative py-4"
+                                >
+                                    <!-- Icon -->
+                                    <img
+                                        src="assets/images/services/geo-shape/02.svg"
+                                        class="me-3"
+                                        alt="service icon"
+                                    />
+                                    <h6 class="mb-0">
+                                        MarkZap - Envio de WhatsApp
+                                    </h6>
+                                    <a
+                                        href="service-single.html"
+                                        class="icon-link icon-link-hover text-body stretched-link ms-auto"
+                                        ><i class="bi bi-arrow-right fs-5"></i>
+                                    </a>
+                                </div>
+
+                                <!-- Service item -->
+                                <div
+                                    class="hover-item d-flex align-items-center border-bottom position-relative py-4"
+                                >
+                                    <!-- Icon -->
+                                    <img
+                                        src="assets/images/services/geo-shape/03.svg"
+                                        class="me-3"
+                                        alt="service icon"
+                                    />
+                                    <h6 class="mb-0">MarkSMS - Envio de SMS</h6>
+                                    <a
+                                        href="service-single.html"
+                                        class="icon-link icon-link-hover text-body stretched-link ms-auto"
+                                        ><i class="bi bi-arrow-right fs-5"></i>
+                                    </a>
+                                </div>
+
+                                <!-- Service item -->
+                                <div
+                                    class="hover-item d-flex align-items-center border-bottom position-relative py-4"
+                                >
+                                    <!-- Icon -->
+                                    <img
+                                        src="assets/images/services/geo-shape/04.svg"
+                                        class="me-3"
+                                        alt="service icon"
+                                    />
+                                    <h6 class="mb-0">MarkPBX - </h6>
+                                    <a
+                                        href="service-single.html"
+                                        class="icon-link icon-link-hover text-body stretched-link ms-auto"
+                                        ><i class="bi bi-arrow-right fs-5"></i>
+                                    </a>
+                                </div>
+
+                                <!-- Service item -->
+                                <div
+                                    class="hover-item d-flex align-items-center border-bottom position-relative py-4"
+                                >
+                                    <!-- Icon -->
+                                    <img
+                                        src="assets/images/services/geo-shape/05.svg"
+                                        class="me-3"
+                                        alt="service icon"
+                                    />
+                                    <h6 class="mb-0">
+                                        MarkVoice - Mensagens de Voz
+                                    </h6>
+                                    <a
+                                        href="service-single.html"
+                                        class="icon-link icon-link-hover text-body stretched-link ms-auto"
+                                        ><i class="bi bi-arrow-right fs-5"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- Services END -->
+                        </div>
+                        <!-- Row END -->
+
+                        <!-- Technology logos -->
+                        <div class="inner-container text-center mt-8">
+                            <h4>Tecnologias e Parceiros</h4>
+                            <!-- Logo list -->
+                            <ul
+                                class="list-inline d-flex justify-content-center flex-wrap gap-4 my-5 my-lg-6"
+                            >
+                                <!-- Logo item -->
+                                <li class="list-inline-item me-0">
+                                    <a
+                                        href="index-ai-agency.html#"
+                                        class="icon-xl btn-transition bg-white border border-white border-opacity-10 d-flex justify-content-center align-items-center rounded-2"
+                                        style="--bs-bg-opacity: 0.05"
+                                    >
+                                        <img
+                                            src="assets/images/client/icons/08.svg"
+                                            class="h-40px"
+                                            alt="icon"
+                                        />
+                                    </a>
+                                </li>
+
+                                <!-- Logo item -->
+                                <li class="list-inline-item me-0">
+                                    <a
+                                        href="index-ai-agency.html#"
+                                        class="icon-xl btn-transition bg-white border border-white border-opacity-10 d-flex justify-content-center align-items-center rounded-2"
+                                        style="--bs-bg-opacity: 0.05"
+                                    >
+                                        <img
+                                            src="assets/images/client/icons/04.svg"
+                                            class="h-40px"
+                                            alt="icon"
+                                        />
+                                    </a>
+                                </li>
+
+                                <!-- Logo item -->
+                                <li class="list-inline-item me-0">
+                                    <a
+                                        href="index-ai-agency.html#"
+                                        class="icon-xl btn-transition bg-white border border-white border-opacity-10 d-flex justify-content-center align-items-center rounded-2"
+                                        style="--bs-bg-opacity: 0.05"
+                                    >
+                                        <img
+                                            src="assets/images/client/icons/12.svg"
+                                            class="h-40px"
+                                            alt="icon"
+                                        />
+                                    </a>
+                                </li>
+
+                                <!-- Logo item -->
+                                <li class="list-inline-item me-0">
+                                    <a
+                                        href="index-ai-agency.html#"
+                                        class="icon-xl btn-transition bg-white border border-white border-opacity-10 d-flex justify-content-center align-items-center rounded-2"
+                                        style="--bs-bg-opacity: 0.05"
+                                    >
+                                        <img
+                                            src="assets/images/client/icons/09.svg"
+                                            class="h-40px"
+                                            alt="icon"
+                                        />
+                                    </a>
+                                </li>
+
+                                <!-- Logo item -->
+                                <li class="list-inline-item me-0">
+                                    <a
+                                        href="index-ai-agency.html#"
+                                        class="icon-xl btn-transition bg-white border border-white border-opacity-10 d-flex justify-content-center align-items-center rounded-2"
+                                        style="--bs-bg-opacity: 0.05"
+                                    >
+                                        <img
+                                            src="assets/images/client/icons/05.svg"
+                                            class="h-40px"
+                                            alt="icon"
+                                        />
+                                    </a>
+                                </li>
+
+                                <!-- Logo item -->
+                                <li class="list-inline-item me-0">
+                                    <a
+                                        href="index-ai-agency.html#"
+                                        class="icon-xl btn-transition bg-white border border-white border-opacity-10 d-flex justify-content-center align-items-center rounded-2"
+                                        style="--bs-bg-opacity: 0.05"
+                                    >
+                                        <img
+                                            src="assets/images/client/icons/03.svg"
+                                            class="h-40px"
+                                            alt="icon"
+                                        />
+                                    </a>
+                                </li>
+
+                                <!-- Logo item -->
+                                <li class="list-inline-item me-0">
+                                    <a
+                                        href="index-ai-agency.html#"
+                                        class="icon-xl btn-transition bg-white border border-white border-opacity-10 d-flex justify-content-center align-items-center rounded-2"
+                                        style="--bs-bg-opacity: 0.05"
+                                    >
+                                        <img
+                                            src="assets/images/client/icons/02.svg"
+                                            class="h-40px"
+                                            alt="icon"
+                                        />
+                                    </a>
+                                </li>
+
+                                <!-- Logo item -->
+                                <li class="list-inline-item me-0">
+                                    <a
+                                        href="index-ai-agency.html#"
+                                        class="icon-xl btn-transition bg-white border border-white border-opacity-10 d-flex justify-content-center align-items-center rounded-2"
+                                        style="--bs-bg-opacity: 0.05"
+                                    >
+                                        <img
+                                            src="assets/images/client/icons/10.svg"
+                                            class="h-40px"
+                                            alt="icon"
+                                        />
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <!-- Button -->
+                            <a
+                                class="btn btn-outline-secondary icon-link icon-link-hover"
+                                href="index-ai-agency.html#"
+                                >Parceiro Oficial META
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- =======================
+Services END -->
+
+            <!-- =======================
+Projects START -->
+            <section class="overflow-hidden">
+                <div class="container mb-5">
+                    <!-- Title and slider button -->
+                    <div class="row">
+                        <!-- Title -->
+                        <div class="col-sm-8 col-lg-5">
+                            <h2 class="text-center text-sm-start mb-0">
+                                Alguns de nossos clientes
+                            </h2>
+                        </div>
+
+                        <!-- Slider button -->
+                        <div class="col-sm-4 col-lg-5 ms-auto">
+                            <div
+                                class="d-flex justify-content-center justify-content-sm-end gap-3 position-relative mt-3"
+                            >
+                                <a
+                                    href="index-ai-agency.html#"
+                                    class="btn btn-secondary btn-lg btn-icon rounded-circle mb-0 swiper-button-prev-project rtl-flip"
+                                    ><i class="bi bi-arrow-left"></i
+                                ></a>
+                                <a
+                                    href="index-ai-agency.html#"
+                                    class="btn btn-secondary btn-lg btn-icon rounded-circle mb-0 swiper-button-next-project rtl-flip"
+                                    ><i class="bi bi-arrow-right"></i
+                                ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects START -->
+                <div
+                    class="swiper swiper-outside-n5 px-4 px-sm-5"
+                    data-swiper-options='{
+		"spaceBetween": 50,
+		"loop": true,
+		"autoplay":false,
+		"navigation":{
+			"nextEl":".swiper-button-next-project",
+			"prevEl":".swiper-button-prev-project"
+		},
+		"breakpoints": { 
+			"576": {"slidesPerView": 1},
+			"768": {"slidesPerView": 3},
+			"992": {"slidesPerView": 3},
+			"1200": {"slidesPerView": 4}
+		}}'
+                >
+                    <div class="swiper-wrapper">
+                        <!-- Project item -->
+                        <div class="swiper-slide">
+                            <div
+                                class="card card-img-scale card-content-hover card-metro-hover rounded-4"
+                            >
+                                <!-- Card Image -->
+                                <img
+                                    src="assets/images/portfolio/4by4/01.jpg"
+                                    class="img-scale"
+                                    alt="portfolio-img"
+                                />
+
+                                <!-- Card elements -->
+                                <div
+                                    class="card-img-overlay hover-content d-flex flex-column align-items-start p-5"
+                                >
+                                    <!-- Client logo -->
+                                    <img
+                                        src="assets/images/client/logo-light/05.svg"
+                                        class="h-30px"
+                                        alt="client logo"
+                                    />
+                                    <!-- Title -->
+                                    <div class="card-text mt-auto">
+                                        <h6 class="mb-0">
+                                            <a
+                                                href="portfolio-case-study-v1.html"
+                                                class="text-white stretched-link"
+                                                >AI-Driven customer insights
+                                                platform</a
+                                            >
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project item -->
+                        <div class="swiper-slide">
+                            <div
+                                class="card card-img-scale card-content-hover card-metro-hover rounded-4"
+                            >
+                                <!-- Card Image -->
+                                <img
+                                    src="assets/images/portfolio/4by4/02.jpg"
+                                    class="img-scale"
+                                    alt="portfolio-img"
+                                />
+
+                                <!-- Card elements -->
+                                <div
+                                    class="card-img-overlay hover-content d-flex flex-column align-items-start p-5"
+                                >
+                                    <!-- Client logo -->
+                                    <img
+                                        src="assets/images/client/logo-light/06.svg"
+                                        class="h-30px"
+                                        alt="client logo"
+                                    />
+                                    <!-- Title -->
+                                    <div class="card-text mt-auto">
+                                        <h6 class="mb-0">
+                                            <a
+                                                href="portfolio-case-study-v1.html"
+                                                class="text-white stretched-link"
+                                                >Automated customer support with
+                                                NLP</a
+                                            >
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project item -->
+                        <div class="swiper-slide">
+                            <div
+                                class="card card-img-scale card-content-hover card-metro-hover rounded-4"
+                            >
+                                <!-- Card Image -->
+                                <img
+                                    src="assets/images/portfolio/4by4/03.jpg"
+                                    class="img-scale"
+                                    alt="portfolio-img"
+                                />
+
+                                <!-- Card elements -->
+                                <div
+                                    class="card-img-overlay hover-content d-flex flex-column align-items-start p-5"
+                                >
+                                    <!-- Client logo -->
+                                    <img
+                                        src="assets/images/client/logo-light/08.svg"
+                                        class="h-30px"
+                                        alt="client logo"
+                                    />
+                                    <!-- Title -->
+                                    <div class="card-text mt-auto">
+                                        <h6 class="mb-0">
+                                            <a
+                                                href="portfolio-case-study-v1.html"
+                                                class="text-white stretched-link"
+                                                >Smart inventory management for
+                                                retail</a
+                                            >
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project item -->
+                        <div class="swiper-slide">
+                            <div
+                                class="card card-img-scale card-content-hover card-metro-hover rounded-4"
+                            >
+                                <!-- Card Image -->
+                                <img
+                                    src="assets/images/portfolio/4by4/04.jpg"
+                                    class="img-scale"
+                                    alt="portfolio-img"
+                                />
+
+                                <!-- Card elements -->
+                                <div
+                                    class="card-img-overlay hover-content d-flex flex-column align-items-start p-5"
+                                >
+                                    <!-- Client logo -->
+                                    <img
+                                        src="assets/images/client/logo-light/02.svg"
+                                        class="h-30px"
+                                        alt="client logo"
+                                    />
+                                    <!-- Title -->
+                                    <div class="card-text mt-auto">
+                                        <h6 class="mb-0">
+                                            <a
+                                                href="portfolio-case-study-v1.html"
+                                                class="text-white stretched-link"
+                                                >AI-powered fraud detection
+                                            </a>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Project item -->
+                        <div class="swiper-slide">
+                            <div
+                                class="card card-img-scale card-content-hover card-metro-hover rounded-4"
+                            >
+                                <!-- Card Image -->
+                                <img
+                                    src="assets/images/portfolio/4by4/05.jpg"
+                                    class="img-scale"
+                                    alt="portfolio-img"
+                                />
+
+                                <!-- Card elements -->
+                                <div
+                                    class="card-img-overlay hover-content d-flex flex-column align-items-start p-5"
+                                >
+                                    <!-- Client logo -->
+                                    <img
+                                        src="assets/images/client/logo-light/03.svg"
+                                        class="h-30px"
+                                        alt="client logo"
+                                    />
+                                    <!-- Title -->
+                                    <div class="card-text mt-auto">
+                                        <h6 class="mb-0">
+                                            <a
+                                                href="portfolio-case-study-v1.html"
+                                                class="text-white stretched-link"
+                                                >AI-Driven customer insights
+                                                platform</a
+                                            >
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                    </div>
+                </div>
+            </section>
+            <!-- =======================
+Client END -->
+
+            <!-- =======================
+Awards START -->
+            <section class="position-relative py-0">
+                <!-- AI robot decoration -->
+                <div
+                    class="position-absolute top-100 start-0 translate-middle ms-9 mt-n8 z-index-9"
+                >
+                    <img
+                        src="assets/images/elements/ai-robot-3.svg"
+                        class="aos"
+                        style="transform: scale(0.4);"
+                        data-aos="fade-up"
+                        data-aos-delay="100"
+                        data-aos-duration="800"
+                        data-aos-easing="ease-in-out"
+                        alt="ai robot"
+                    />
+                </div>
+
+                <div
+                    class="bg-secondary-grad position-relative overflow-hidden py-6 py-md-8"
+                >
+                    <!-- Curve decoration -->
+                    <span class="position-absolute top-0 start-0 mt-n5">
+                        <svg
+                            class="fill-body"
+                            width="1930"
+                            height="137"
+                            viewBox="0 0 1930 137"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M464.909 117.12C228.685 132.607 108.971 82.5335 0 51.0476V1.5L1930 0V26.649V132.607C1873.32 98.4636 1645.24 119.618 1488.21 132.607C1319.34 146.576 1149.46 119.696 1051.95 103.318C837.339 67.2694 668.231 103.79 464.909 117.12Z"
+                            />
+                        </svg>
+                    </span>
+
+                    <div class="container ps-lg-6 pt-6">
+                        <div class="row align-items-center justify-content-center">
+                            <!-- Title -->
+                            <div class="col-12 col-md-4 col-lg-3 mb-4 mb-md-0">
+                                <h2 class="text-center text-md-end mb-0">
+                                    Parceiros Oficiais
+                                </h2>
+                            </div>
+
+                            <!-- Parceiros -->
+                            <div class="col-12 col-md-8 col-lg-9">
+                                <div class="d-flex justify-content-center justify-content-md-start align-items-center flex-wrap gap-4 gap-lg-5">
+                                    <!-- Parceiro Meta -->
+                                    <div class="text-center">
+                                        <div class="bg-white rounded-3 p-3 shadow-sm d-inline-flex align-items-center justify-content-center" style="min-width: 200px; min-height: 150px;">
+                                            <img 
+                                                src="assets/images/meta.svg"
+                                                alt="Meta Partner"
+                                                style="max-width: 180px; max-height: 130px; object-fit: contain;"
+                                            />
+                                        </div>
+                                        <p class="small mt-2 mb-0 fw-semibold text-muted">Parceiro Oficial</p>
+                                    </div>
+
+                                    <!-- Parceiro AWS -->
+                                    <div class="text-center">
+                                        <div class="bg-white rounded-3 p-3 shadow-sm d-inline-flex align-items-center justify-content-center" style="min-width: 200px; min-height: 150px;">
+                                            <img 
+                                                src="assets/images/aws.svg"
+                                                alt="AWS Partner"
+                                                style="max-width: 180px; max-height: 130px; object-fit: contain;"
+                                            />
+                                        </div>
+                                        <p class="small mt-2 mb-0 fw-semibold text-muted">Parceiro Oficial</p>
+                                    </div>
+
+                                    <!-- Parceiro Google -->
+                                    <div class="text-center">
+                                        <div class="bg-white rounded-3 p-3 shadow-sm d-inline-flex align-items-center justify-content-center" style="min-width: 200px; min-height: 150px;">
+                                            <img 
+                                                src="assets/images/google.svg"
+                                                alt="Google Cloud Partner"
+                                                style="max-width: 180px; max-height: 130px; object-fit: contain;"
+                                            />
+                                        </div>
+                                        <p class="small mt-2 mb-0 fw-semibold text-muted">Parceiro Oficial</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row END -->
+                    </div>
+                </div>
+            </section>
+            <!-- =======================
+Awards END -->
+        </main>
+        <!-- **************** MAIN CONTENT END **************** -->
+
+        <!-- =======================
+Footer START -->
+        <footer
+            class="bg-dark pt-6 pt-md-8 position-relative"
+            data-bs-theme="dark"
+        >
+            <div class="container">
+                <div class="row g-4 justify-content-between">
+                    <!-- Widget 1 START -->
+                    <div class="col-lg-4">
+                        <!-- logo -->
+                        <a href="index.html">
+                            <img
+                                class="h-40px"
+                                src="assets/images/logo-light.svg"
+                                alt="logo"
+                            />
+                        </a>
+
+                        <p class="my-3 my-lg-4">
+                            Plataforma completa de comunicação omnichannel para sua empresa. 
+                            WhatsApp, SMS, mensagens de voz e atendimento integrado em uma só solução.
+                        </p>
+                        <!-- Social icon -->
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <a
+                                    class="btn btn-xs btn-icon btn-secondary"
+                                    href="index-ai-agency.html#"
+                                    ><i class="bi bi-facebook lh-base"></i
+                                ></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a
+                                    class="btn btn-xs btn-icon btn-secondary"
+                                    href="index-ai-agency.html#"
+                                    ><i class="bi bi-instagram lh-base"></i
+                                ></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a
+                                    class="btn btn-xs btn-icon btn-secondary"
+                                    href="index-ai-agency.html#"
+                                    ><i class="bi bi-twitter-x lh-base"></i
+                                ></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a
+                                    class="btn btn-xs btn-icon btn-secondary"
+                                    href="index-ai-agency.html#"
+                                    ><i class="bi bi-linkedin lh-base"></i
+                                ></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Widget 1 END -->
+
+                    <!-- Widget 2 START -->
+                    <div class="col-lg-7 col-xxl-6">
+                        <div class="row g-4">
+                            <!-- Link block -->
+                            <div class="col-12">
+                                <h6 class="mb-3 mb-sm-4">Contato</h6>
+                                
+                                <!-- Telefones por região -->
+                                <div class="mb-4">
+                                    <h6 class="text-primary mb-3">📞 Telefones por Região</h6>
+                                    <div class="row g-3">
+                                        <div class="col-6 col-lg-3">
+                                            <div class="bg-white bg-opacity-10 rounded-2 p-2 text-center">
+                                                <div class="text-primary fw-bold small mb-1">SP</div>
+                                                <a class="text-decoration-none text-white d-block" href="tel:+551140637993">
+                                                    <small>(11) 4063-7993</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-lg-3">
+                                            <div class="bg-white bg-opacity-10 rounded-2 p-2 text-center">
+                                                <div class="text-primary fw-bold small mb-1">RJ</div>
+                                                <a class="text-decoration-none text-white d-block" href="tel:+552140637993">
+                                                    <small>(21) 4063-7993</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-lg-3">
+                                            <div class="bg-white bg-opacity-10 rounded-2 p-2 text-center">
+                                                <div class="text-primary fw-bold small mb-1">MG</div>
+                                                <a class="text-decoration-none text-white d-block" href="tel:+553140637993">
+                                                    <small>(31) 4063-7993</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 col-lg-3">
+                                            <div class="bg-white bg-opacity-10 rounded-2 p-2 text-center">
+                                                <div class="text-primary fw-bold small mb-1">PR</div>
+                                                <a class="text-decoration-none text-white d-block" href="tel:+554140637993">
+                                                    <small>(41) 4063-7993</small>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Email e Horário -->
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <h6 class="text-primary mb-2">📧 Contato Comercial</h6>
+                                        <div class="bg-white bg-opacity-10 rounded-2 p-3">
+                                            <a class="text-decoration-none text-white d-flex align-items-center" href="mailto:comercial@marktel.com.br">
+                                                <i class="bi bi-envelope me-2 text-primary"></i>
+                                                <span class="small">comercial@marktel.com.br</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-6">
+                                        <h6 class="text-primary mb-2">🕐 Horário de Atendimento</h6>
+                                        <div class="bg-white bg-opacity-10 rounded-2 p-3">
+                                            <div class="d-flex align-items-center text-white">
+                                                <i class="bi bi-clock me-2 text-primary"></i>
+                                                <span class="small">Segunda à Sexta-feira das 8h às 18h</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- Widget 2 END -->
+                </div>
+
+                <!-- Divider -->
+                <hr class="mt-xl-5 mb-0 opacity-1" />
+
+                <!-- Bottom footer -->
+                <div
+                    class="d-md-flex justify-content-between align-items-center text-center text-lg-start py-4"
+                >
+                    <!-- copyright text -->
+                    <div class="text-body small mb-3 mb-md-0">
+                        Copyrights ©2025 Marktel.
+                    </div>
+
+                    <!-- Policy link -->
+                    <ul class="nav d-flex justify-content-center gap-1 mb-0">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link small py-0"
+                                href="index-ai-agency.html#"
+                                >Politica de Privacidade</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                            <a
+                                class="nav-link small py-0 pe-0"
+                                href="index-ai-agency.html#"
+                                >Termos & condições</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <!-- =======================
+Footer END -->
+
+        <!-- Schedule call offcanvas content START -->
+        <div
+            class="offcanvas offcanvas-end"
+            data-bs-scroll="true"
+            tabindex="-1"
+            id="scheduleCall"
+            aria-labelledby="scheduleCallLabel"
+        >
+            <div class="offcanvas-header">
+                <h6 class="offcanvas-title" id="scheduleCallLabel">
+                    Agende uma demonstração
+                </h6>
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="offcanvas"
+                    aria-label="Close"
+                ></button>
+            </div>
+            <div class="offcanvas-body">
+                <!-- Form START -->
+                <form class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label">Seu nome *</label>
+                        <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            placeholder="Nome completo"
+                        />
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Endereço de email *</label>
+                        <input
+                            type="email"
+                            class="form-control form-control-sm"
+                            id="floatingInput"
+                            placeholder="name@example.com"
+                        />
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Data *</label>
+                        <input
+                            type="date"
+                            class="form-control form-control-sm"
+                        />
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Horário *</label>
+                        <input
+                            type="time"
+                            class="form-control form-control-sm"
+                        />
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Número de telefone *</label>
+                        <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            placeholder="(xxx) xx xxxx"
+                        />
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Assunto *</label>
+                        <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            placeholder="Nome do assunto"
+                        />
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label">Mensagem *</label>
+                        <textarea
+                            class="form-control"
+                            placeholder="Escreva sua mensagem aqui..."
+                            id="floatingTextarea2"
+                            style="height: 150px"
+                        ></textarea>
+                    </div>
+                    <!-- Button -->
+                    <button class="btn btn-primary mb-0">Agendar</button>
+                </form>
+                <!-- Form END -->
+            </div>
+        </div>
+        <!-- Schedule call offcanvas content END -->
+
+        <!-- Back to top -->
+        <div class="back-top"></div>
+
+        <!-- Bootstrap JS -->
+        <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!--Vendors-->
+        <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+        <script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+        <script src="assets/vendor/aos/aos.js"></script>
+
+        <!-- Theme Functions -->
+        <script src="assets/js/functions.js"></script>
+    </body>
+</html>

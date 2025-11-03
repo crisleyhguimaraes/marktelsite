@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60" height="60">
+  <defs>
+    <linearGradient id="metaGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0064e1"/>
+      <stop offset="50%" style="stop-color:#0073ee"/>  
+      <stop offset="100%" style="stop-color:#0082fb"/>
+    </linearGradient>
+    <linearGradient id="metaGrad2" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" style="stop-color:#0082fb"/>
+      <stop offset="100%" style="stop-color:#0064e0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Círculo de fundo -->
+  <circle cx="256" cy="256" r="256" fill="url(#metaGrad1)"/>
+  
+  <!-- Logo Meta -->
+  <path d="M159 274c-14-28-39-46-70-46-44 0-80 36-80 80s36 80 80 80c31 0 56-18 70-46 14 28 39 46 70 46 44 0 80-36 80-80s-36-80-80-80c-31 0-56 18-70 46z" fill="url(#metaGrad2)"/>
+  
+  <!-- Letra "f" estilizada -->
+  <path d="M256 176c-8.8 0-16 7.2-16 16v32h-32c-8.8 0-16 7.2-16 16s7.2 16 16 16h32v80c0 8.8 7.2 16 16 16s16-7.2 16-16v-80h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32v-32c0-8.8-7.2-16-16-16z" fill="#ffffff"/>
+</svg>
